@@ -7,7 +7,7 @@ function App(){
   return(
     <NotesProvider>
       <div>
-        <h1>Notes</h1>
+        <h1>Notes Dashboard</h1>
       <AddNote/>
       <NoteList/>
       <NotesCount/>

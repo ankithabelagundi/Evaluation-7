@@ -1,4 +1,4 @@
-import { useContext, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { NotesContext } from "../context/NotesContext";
 
 function AddNote(){
@@ -9,7 +9,11 @@ function AddNote(){
         if(!text)return;
         addNote(text);
         inputRef.current.value="";
-        inputRef.current.focus();
+        useEffect(()=>{
+            inputRef.current.focus();
+
+        },[])
+    
     };
     return(
         <div className="add-note">
