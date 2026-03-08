@@ -4,14 +4,15 @@ import { NotesContext } from "../context/NotesContext";
 function NoteList(){
     const{notes,selectedNote,setSelectedNote}=useContext(NotesContext);
     return(
-        <ul>
+        <div className="notes-grid">
             {notes.map((note)=>(
-                <li key={note.id} onClick={()=>setSelectedNote(note.id)}
-                style={{background:selectedNote===note.id?"yellow":"transparent", cursor:"pointer"}}>
+                <div key={note.id} onClick={()=>setSelectedNote(note.id)}
+                className={selectedNote===note.id?"note selected":"note"}>
                     {note.text}
-                </li>
+                </div>
             ))}
-        </ul>
+       
+        </div>
     );
 }
 export default NoteList;
